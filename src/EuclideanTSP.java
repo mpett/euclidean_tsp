@@ -12,6 +12,8 @@ public class EuclideanTSP {
 
     public static void main(String[] args) {
         new EuclideanTSP();
+
+        // My comment
     }
 
     EuclideanTSP() {
