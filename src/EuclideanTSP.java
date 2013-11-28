@@ -80,11 +80,6 @@ public class EuclideanTSP {
         return Math.sqrt(
                 Math.pow((inputNodes.get(a).getL()-inputNodes.get(b).getL()),2)+
                 Math.pow((inputNodes.get(a).getR()-inputNodes.get(b).getR()),2));
-        //double v1 = inputNodes.get(a).getL();
-        //double v2 = inputNodes.get(b).getR();
-        //double dist = v1 - v2;
-        //dist = Math.abs(dist);
-        //return dist;
     }
 
     int[] twoOptSwap(int[] route, int i, int j) {
