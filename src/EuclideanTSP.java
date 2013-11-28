@@ -18,8 +18,15 @@ public class EuclideanTSP {
         io = new Kattio(System.in, System.out);
         handleInput();
         //printInput();
-        printTour(greedyTour());
-        //printTotalLengthTour(greedyTour());
+        int[] res = greedyTour();
+        int[] res2 = twoOpt();
+
+        printTour(res);
+        System.out.println("Total length: " + getTotalLength(res));
+        System.out.println("---------------");
+        printTour(res2);
+        System.out.println("Total length: " + getTotalLength(res2));
+
         io.close();
     }
 
@@ -36,11 +43,12 @@ public class EuclideanTSP {
             System.out.println(tour[i]);
     }
 
-    void printTotalLengthTour(int[] tour) {
+    double getTotalLength(int[] tour) {
         double total = 0;
         for(int i = 1; i < tour.length; i++)
             total += dist(tour[i-1], tour[i]);
-        System.out.println("Total tour length: " + total);
+        total += dist(tour[tour.length-1], tour[0]);
+        return total;
     }
 
     void printInput() {
@@ -78,6 +86,68 @@ public class EuclideanTSP {
         //dist = Math.abs(dist);
         //return dist;
     }
+
+    int[] twoOptSwap(int[] route, int i, int j) {
+        int N = inputNodes.size();
+
+        int[] newRoute = new int[N];
+        for (int ii = 0; ii < i; ii++) {
+            newRoute[ii] = route[ii];
+        }
+
+        for (int ii = i; ii <= j; ii++) {
+            newRoute[j-(ii-i)] = route[ii];
+        }
+
+        for (int ii = j+1; ii < N; ii++) {
+            newRoute[ii] = route[ii];
+        }
+
+        return newRoute;
+    }
+
+    int[] twoOpt() {
+        /*
+        repeat until no improvement is made {
+            start_again:
+            best_distance = calculateTotalDistance(existing_route)
+            for (i = 0; i < number of nodes eligible to be swapped - 1; i++) {
+                for (k = i + 1; k < number of nodes eligible to be swapped; k++) {
+                    new_route = 2optSwap(existing_route, i, k)
+                    new_distance = calculateTotalDistance(new_route)
+                    if (new_distance < best_distance) {
+                        existing_route = new_route
+                        goto start_again
+                    }
+                }
+            }
+        }
+        */
+        int N = inputNodes.size();
+        int[] tour =  new int[N];
+        for (int i = 0; i < N; i++) tour[i] = i;
+
+        double bestDist = getTotalLength(tour);
+        for (int i = 0; i < N; i++) {
+            for (int j = i+1; j < N; j++) {
+                int[] newRoute = twoOptSwap(tour, i,j);
+                double newDist =  getTotalLength(newRoute);
+                if (newDist < bestDist){
+                    bestDist = newDist;
+                    tour = newRoute;
+                }
+                //else {
+                //    break;
+                //}
+            }
+        }
+
+        return tour;
+    }
+
+
+
+
 }
 
 class Pair<L,R> {
