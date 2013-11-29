@@ -20,13 +20,11 @@ public class EuclideanTSP {
         //printInput();
         int[] res = greedyTour();
         int[] res2 = twoOpt();
-
         printTour(res);
         System.out.println("Total length: " + getTotalLength(res));
         System.out.println("---------------");
         printTour(res2);
         System.out.println("Total length: " + getTotalLength(res2));
-
         io.close();
     }
 
@@ -52,9 +50,8 @@ public class EuclideanTSP {
     }
 
     void printInput() {
-        for(Pair<Double, Double> node : inputNodes) {
+        for(Pair<Double, Double> node : inputNodes)
             System.out.println(node.getL() + " " + node.getR());
-        }
     }
 
     int[] greedyTour() {
@@ -84,20 +81,13 @@ public class EuclideanTSP {
 
     int[] twoOptSwap(int[] route, int i, int j) {
         int N = inputNodes.size();
-
         int[] newRoute = new int[N];
-        for (int ii = 0; ii < i; ii++) {
+        for (int ii = 0; ii < i; ii++)
             newRoute[ii] = route[ii];
-        }
-
-        for (int ii = i; ii <= j; ii++) {
+        for (int ii = i; ii <= j; ii++)
             newRoute[j-(ii-i)] = route[ii];
-        }
-
-        for (int ii = j+1; ii < N; ii++) {
+        for (int ii = j+1; ii < N; ii++)
             newRoute[ii] = route[ii];
-        }
-
         return newRoute;
     }
 
@@ -121,7 +111,6 @@ public class EuclideanTSP {
         int N = inputNodes.size();
         int[] tour =  new int[N];
         for (int i = 0; i < N; i++) tour[i] = i;
-
         double bestDist = getTotalLength(tour);
         for (int i = 0; i < N; i++) {
             for (int j = i+1; j < N; j++) {
@@ -131,18 +120,10 @@ public class EuclideanTSP {
                     bestDist = newDist;
                     tour = newRoute;
                 }
-                //else {
-                //    break;
-                //}
             }
         }
-
         return tour;
     }
-
-
-
-
 }
 
 class Pair<L,R> {
