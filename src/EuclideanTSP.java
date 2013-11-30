@@ -7,7 +7,7 @@
  */
 import java.util.ArrayList;
 public class EuclideanTSP {
-    Kattio io;
+    Kattio io = new Kattio(System.in, System.out);
     ArrayList<Pair<Double, Double>> inputNodes = new ArrayList<Pair<Double, Double>>();
 
     public static void main(String[] args) {
@@ -15,7 +15,6 @@ public class EuclideanTSP {
     }
 
     EuclideanTSP() {
-        io = new Kattio(System.in, System.out);
         handleInput();
         //printInput();
         int[] res = greedyTour();
@@ -92,22 +91,6 @@ public class EuclideanTSP {
     }
 
     int[] twoOpt() {
-        /*
-        repeat until no improvement is made {
-            start_again:
-            best_distance = calculateTotalDistance(existing_route)
-            for (i = 0; i < number of nodes eligible to be swapped - 1; i++) {
-                for (k = i + 1; k < number of nodes eligible to be swapped; k++) {
-                    new_route = 2optSwap(existing_route, i, k)
-                    new_distance = calculateTotalDistance(new_route)
-                    if (new_distance < best_distance) {
-                        existing_route = new_route
-                        goto start_again
-                    }
-                }
-            }
-        }
-        */
         int N = inputNodes.size();
         int[] tour =  new int[N];
         for (int i = 0; i < N; i++) tour[i] = i;
