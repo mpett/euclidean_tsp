@@ -5,16 +5,22 @@
  * Time: 15:11
  * To change this template use File | Settings | File Templates.
  */
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.io.PrintWriter;
 public class EuclideanTSP {
     Kattio io = new Kattio(System.in, System.out);
     ArrayList<Pair<Double, Double>> inputNodes = new ArrayList<Pair<Double, Double>>();
+    private static boolean visualize = false;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+        if(args.length != 0) {
+            if(args[0].equals("visualize")) visualize = true;
+        }
         new EuclideanTSP();
     }
 
-    EuclideanTSP() {
+    EuclideanTSP() throws FileNotFoundException {
         handleInput();
         //printInput();
         int[] res = greedyTour();
@@ -24,7 +30,31 @@ public class EuclideanTSP {
         System.out.println("---------------");
         printTour(res2);
         System.out.println("Total length: " + getTotalLength(res2));
+        if(visualize)
+            generateVisData(res);
         io.close();
+    }
+
+    void generateVisData(int[] tour) throws FileNotFoundException {
+        PrintWriter writer = new PrintWriter("tour.vis");
+        writer.print("points = [");
+        for(Pair<Double, Double> node : inputNodes) {
+            writer.print("(" + node.getL() + ", " + node.getR() + ")");
+            if(!node.equals(inputNodes.get(inputNodes.size()-1)))
+                writer.print(",");
+        }
+        writer.println("]");
+        writer.println("vis = Visualiser(points)");
+        writer.print("Visualiser.update([");
+        for(int i = 0; i < tour.length; i++) {
+            writer.print(tour[i]);
+            if(i != tour.length -1)
+                writer.print(", ");
+        }
+        writer.println("])");
+        writer.flush();
+        writer.close();
+        System.out.println("Managed to successfully create visualizer data.");
     }
 
     void handleInput() {

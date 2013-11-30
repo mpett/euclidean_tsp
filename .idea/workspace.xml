@@ -8,8 +8,8 @@
     <ignored path="euclidean_tsp.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="df9823c1-071c-4a74-b8a3-445b584ab42f" time="1385823260251" ignored="false" />
-    <file path="/EuclideanTSP.java" changelist="df9823c1-071c-4a74-b8a3-445b584ab42f" time="1385823500687" ignored="false" />
-    <file path="/fragment.java" changelist="df9823c1-071c-4a74-b8a3-445b584ab42f" time="1385822863648" ignored="false" />
+    <file path="/EuclideanTSP.java" changelist="df9823c1-071c-4a74-b8a3-445b584ab42f" time="1385833787083" ignored="false" />
+    <file path="/fragment.java" changelist="df9823c1-071c-4a74-b8a3-445b584ab42f" time="1385833758403" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,10 +73,20 @@
       <file leaf-file-name="EuclideanTSP.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EuclideanTSP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="86" selection-start="1132" selection-end="1132" vertical-scroll-proportion="0.66289306">
+            <state line="43" column="86" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.79219145">
               <folding>
-                <element signature="e#997#1013#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2179#2195#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tour.vis" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tour.vis">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="73" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -220,7 +230,7 @@
     <configuration default="false" name="EuclideanTSP" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="EuclideanTSP" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="visualize" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -377,8 +387,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19797225" sideWeight="0.797862" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20213799" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19797225" sideWeight="0.7968902" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20310982" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -455,7 +465,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#997#1013#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2179#2195#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -474,11 +485,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tour.vis">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="73" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/EuclideanTSP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="86" selection-start="1132" selection-end="1132" vertical-scroll-proportion="0.66289306">
+        <state line="43" column="86" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.79219145">
           <folding>
-            <element signature="e#997#1013#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2179#2195#0" expanded="true" />
           </folding>
         </state>
       </provider>
