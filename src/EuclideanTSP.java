@@ -60,27 +60,24 @@ public class EuclideanTSP {
         for(int i = 1; i < N; i++) {
             best = -1;
             for(int j = 0; j < N; j++) {
-                if(!used[j] && (best == -1 || dist(tour[i-1],j) < dist(tour[i-1],best))) {
+                if(!used[j] && (best == -1 || dist(tour[i-1],j) < dist(tour[i-1],best)))
                     best = j;
-                }
             }
             tour[i] = best;
             used[best] = true;
         }
-
         return tour;
     }
 
     double dist(int a, int b) {
         double result;
-        if(DIST_MATRIX[a][b] != 0) {
+        if(DIST_MATRIX[a][b] != 0)
             result = DIST_MATRIX[a][b];
-        } else {
+        else {
             result = Math.sqrt(
                     Math.pow((inputNodes.get(a).getL()-inputNodes.get(b).getL()),2)+
                             Math.pow((inputNodes.get(a).getR()-inputNodes.get(b).getR()),2));
             DIST_MATRIX[a][b] = result;
-
         }
         return result;
     }
@@ -103,8 +100,7 @@ public class EuclideanTSP {
                             rightValue = tour[rightIndex];
                             tour[leftIndex] = rightValue;
                             tour[rightIndex] = leftValue;
-                        }
-                        found = true;
+                        } found = true;
                     }
                 }
             }
